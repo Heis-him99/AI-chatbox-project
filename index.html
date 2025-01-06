@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Box with History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="history-panel" id="historyPanel">
+            <h2>History</h2>
+            <ul id="historyList"></ul>
+        </div>
+        <div class="chat-main">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="typing-indicator hidden" id="typingIndicator">AI is typing...</div>
+            <form id="chatForm" class="chat-form">
+                <input type="text" id="userInput" placeholder="Ask me anything..." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <button id="toggleHistory" class="toggle-history">Toggle History</button>
+    </div>
+    <script>
+        // Set the OpenAI API key as an environment variable
+        process = { env: { OPENAI_API_KEY: 'your-openai-api-key-here' } };
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
