@@ -4,30 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat Box with History</title>
+    <title>AI Assistant</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 </head>
 
 <body>
-    <div class="chat-container">
-        <div class="history-panel" id="historyPanel">
-            <h2>History</h2>
-            <ul id="historyList"></ul>
-        </div>
-        <div class="chat-main">
-            <div class="chat-messages" id="chatMessages"></div>
-            <div class="typing-indicator hidden" id="typingIndicator">AI is typing...</div>
+    <div class="app-container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2>HISTORY</h2>
+                <button id="closeSidebar" class="close-button">&times;</button>
+            </div>
+            <nav id="conversationList"></nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1>AI Assistant</h1>
+                <button id="toggleSidebar" class="toggle-sidebar">☰</button>
+            </header>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div id="typingIndicator" class="typing-indicator hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <form id="chatForm" class="chat-form">
-                <input type="text" id="userInput" placeholder="Ask me anything..." required>
+                <input type="text" id="userInput" placeholder="Type your message..." required>
                 <button type="submit">Send</button>
             </form>
-        </div>
-        <button id="toggleHistory" class="toggle-history">Toggle History</button>
+        </main>
     </div>
-    <script>
-        // Set the OpenAI API key as an environment variable
-        process = { env: { OPENAI_API_KEY: 'your-openai-api-key-here' } };
-    </script>
     <script src="script.js"></script>
 </body>
 
